@@ -3,3 +3,4 @@ dev:
   steps:
     - internal/watch:
       code: lein run
+      reload: true
