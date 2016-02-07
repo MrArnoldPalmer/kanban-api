@@ -1,4 +1,5 @@
 box: clojure
 dev:
   steps:
-    - lein run
+    - internal/watch:
+      code: lein run
