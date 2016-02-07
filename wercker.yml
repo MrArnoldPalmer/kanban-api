@@ -1,0 +1,4 @@
+box: clojure
+dev:
+  steps:
+    - lein run
