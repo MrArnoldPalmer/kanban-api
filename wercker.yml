@@ -1,6 +1,15 @@
 box: clojure
+build:
+  steps:
+    - script:
+      name: test
+      code: |
+        lein test
+    - script:
+      name: build
+      code: |
+        lein uberjar
 dev:
   steps:
     - internal/watch:
       code: lein run
-      reload: true
