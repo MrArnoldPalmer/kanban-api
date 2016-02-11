@@ -17,5 +17,5 @@ dev:
       name: env
       code: env
     - internal/watch:
-      code: lein run
+      code: lein ring server-headless 4000
       reload: true
