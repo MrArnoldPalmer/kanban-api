@@ -1,4 +1,6 @@
 box: clojure
+services:
+  - id: mongo
 build:
   steps:
     - script:
@@ -11,5 +13,9 @@ build:
         lein uberjar
 dev:
   steps:
+    - script:
+      name: env
+      code: env
     - internal/watch:
       code: lein run
+      reload: true
