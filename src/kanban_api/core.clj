@@ -8,18 +8,8 @@
 (def db (mongo/get-db conn "kanban"))
 
 (defroutes app
-  (GET "/" [] "<h1>Hello World</h1>"))
-
-
-
-;;(defn -main
-;;  "I don't do a whole lot ... yet."
-;;  [& args]
-;;  (mc/insert db "documents" { :_id "test" :first_name "John" :last_name "Lennon" })
-;;  (println (mc/find-maps db "documents"))
-;;  (println "Hello, World!"))
-;;
-
+  (GET "/" [] "<h1>Hello World</h1>")
+  (route/not-found {:message "Route not found"}))
 
 
 

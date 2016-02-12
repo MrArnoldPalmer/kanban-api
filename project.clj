@@ -7,9 +7,12 @@
                  [com.novemberain/monger "3.0.2"]
                  [ring/ring-core "1.4.0"]
                  [ring/ring-jetty-adapter "1.4.0"]
+                 [ring/ring-json "0.4.0"]
                  [compojure "1.4.0"]]
-  :plugins [[lein-ring "0.8.10"]]
+  :plugins [[lein-ring "0.9.7"]]
   :ring {:handler kanban-api.core/app}
   :main ^:skip-aot kanban-api.core
   :target-path "target/%s"
-  :profiles {:uberjar {:aot :all}})
+  :profiles {:uberjar {:aot :all}
+             :plugins [[cider/cider-nrepl "0.10.2"]]
+             :dev {:dependencies [[ring/ring-mock "0.3.0"]]}})
