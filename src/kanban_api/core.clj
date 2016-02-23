@@ -1,12 +1,11 @@
 (ns kanban-api.core
-  (:require [monger.core :as mongo]
-            [monger.collection :as mc]
+  (:require [korma.db :as korma]
             [compojure.core :refer :all]
             [compojure.route :as route]))
 
-(def conn (mongo/connect {:host (System/getenv "MONGO_PORT_27017_TCP_ADDR")}))
-(def db (mongo/get-db conn "kanban"))
-
+(korma/defdb db (korma/postgres {:db "postgres"
+                     :user (System/getenv "POSTGRES_USER")
+                     :password (System/getenv "POSTGRES_PASSWORD")}))
 (defroutes app
   (GET "/" [] "<h1>Hello World</h1>")
   (route/not-found {:message "Route not found"}))
