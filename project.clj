@@ -10,7 +10,7 @@
                  [ring/ring-json "0.4.0"]
                  [compojure "1.4.0"]]
   :plugins [[lein-ring "0.9.7"]]
-  :ring {:handler kanban-api.core/app}
+  :ring {:handler kanban-api.core/app-routes}
   :main ^:skip-aot kanban-api.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}
