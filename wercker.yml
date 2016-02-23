@@ -1,9 +1,6 @@
 box: clojure
 services:
-  - id: postgres
-    env:
-      POSTGRES_PASSWORD: kanban
-      POSTGRES_USER: kanban
+  - id: mongo
 build:
   steps:
     - script:
@@ -21,4 +18,3 @@ dev:
       code: env
     - internal/watch:
       code: lein ring server-headless 4000
-      reload: true
