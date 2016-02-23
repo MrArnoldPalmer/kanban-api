@@ -18,4 +18,3 @@ dev:
       code: env
     - internal/watch:
       code: lein ring server-headless 4000
-      reload: true
