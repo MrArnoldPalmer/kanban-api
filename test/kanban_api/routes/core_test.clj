@@ -4,7 +4,7 @@
             [ring.mock.request :refer :all]))
 
 (deftest routes-core
-  (testing "band endpoint"
+  (testing "bad endpoint"
     (let [response (routes (request :get "/bad-endpoint"))]
       (is (= (:status response) 404))
       (is (= (:message response) "Route not found")))))

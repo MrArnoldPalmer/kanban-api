@@ -4,5 +4,5 @@
             [monger.collection :as mc]))
 
 (defroutes routes
-  (GET "/users" [] (mc/find db "users"))
+  (GET "/users" [] (mc/find-maps db "users"))
   (POST "/users" {body :body} (println "POST to users")))
